@@ -1,4 +1,15 @@
-Needs["InternetTools`"];
+BeginPackage["GoogleTools", {"InternetTools`"}]
+
+GoogleURL::usage="";
+GoogleLuckyURL::usage="";
+GoogleHyperlink::usage="";
+GoogleSearch::usage="";
+GoogleBookURL::usage="";
+GoogleBookHyperlink::usage="";
+GoogleBookSearch::usage="";
+GoogleFinanceURL::usage="";
+
+Begin["Private`"]
 
 GoogleURL[string_] :=
 	StringJoin[
@@ -39,3 +50,6 @@ GoogleFinanceURL[ticker_String]:=
 	StringJoin[	"http://www.google.com/finance?chdnp=1&chdd=1&chds=1&chdv=1&chvs=maximized&chdeh=0&chfdeh=0&chdet=1291815479514&chddm=829311&chls=IntervalBasedLine&ntsp=0&fct=big&q=",
 	ticker
 	]
+
+End[]
+EndPackage[]
